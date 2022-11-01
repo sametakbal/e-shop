@@ -9,6 +9,7 @@
 
 # User-specific files (MonoDevelop/Xamarin Studio)
 *.userprefs
+.DS_Store
 
 # Build results
 [Dd]ebug/
@@ -93,6 +94,8 @@ $tf/
 _ReSharper*/
 *.[Rr]e[Ss]harper
 *.DotSettings.user
+
+.idea
 
 # JustCode is a .NET coding add-in
 .JustCode
