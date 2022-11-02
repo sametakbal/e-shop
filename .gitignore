@@ -244,3 +244,4 @@ _Pvt_Extensions
 
 # FAKE - F# Make
 .fake/
+.idea/.idea.e-shop.dir/.idea/encodings.xml
