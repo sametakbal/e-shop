@@ -10,6 +10,18 @@
 # User-specific files (MonoDevelop/Xamarin Studio)
 *.userprefs
 .DS_Store
+.idea
+/.idea/
+/.idea/*
+!/.idea/.idea.*
+/.idea/.idea.*/*
+!/.idea/.idea.*/.idea
+/.idea/.idea.*/.idea/*
+!/.idea/.idea.*/.idea/runConfigurations
+eshop.db
+eshop.db-shm
+eshop.db-wal
+*.db
 
 # Build results
 [Dd]ebug/
