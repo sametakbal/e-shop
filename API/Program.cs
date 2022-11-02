@@ -5,6 +5,10 @@ namespace API
 {
     public class Program
     {
+        protected Program()
+        {
+        }
+
         public static async Task Main(string[] args)
         {
             var host = CreateHostBuilder(args).Build();
@@ -15,20 +19,19 @@ namespace API
             {
                 var context = services.GetRequiredService<StoreContext>();
                 await context.Database.MigrateAsync();
+                await StoreContextSeed.SeedAsync(context, loggerFactory);
             }
             catch (Exception ex)
             {
                 var logger = loggerFactory.CreateLogger<Program>();
-                logger.LogError(ex,"An error occurred during migration");
+                logger.LogError(ex, "An error occurred during migration");
             }
+
             await host.RunAsync();
         }
 
-        public static IHostBuilder CreateHostBuilder(string[] args) =>
+        private static IHostBuilder CreateHostBuilder(string[] args) =>
             Host.CreateDefaultBuilder(args)
-                .ConfigureWebHostDefaults(webBuilder =>
-                {
-                    webBuilder.UseStartup<Startup>();
-                });
+                .ConfigureWebHostDefaults(webBuilder => { webBuilder.UseStartup<Startup>(); });
     }
 }
